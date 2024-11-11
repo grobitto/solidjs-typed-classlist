@@ -1,11 +1,10 @@
 type ClassNameRecord<K extends string> = {
-  [P in K]?: boolean | null | undefined;
+  [P in K]?: boolean |  undefined;
 };
 
 type Variants<T extends string> =
   | T
   | ClassNameRecord<T>
-  | null
   | undefined
   | boolean;
 
@@ -23,11 +22,11 @@ export function classlist<T extends string>( ...classes:Variants<T>[]) {
     return classes[0] as {[key:string]:boolean | undefined};
   }
 
-  const result:{[key in T]?: boolean | null | undefined} = {};
+  const result:{[key in T]?: boolean | undefined} = {};
   classes.forEach((c) => {
     if (typeof c === "object" && c !== null) {
       Object.keys(c as ClassNameRecord<T>).forEach((key) => {
-        result[key as T] = c![key as T] as undefined as boolean | null | undefined;
+        result[key as T] = c![key as T] as undefined as boolean  | undefined;
       });
     } else if( c !== null && c !== undefined) {
       result[c as T] = true;

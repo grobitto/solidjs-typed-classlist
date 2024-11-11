@@ -1,16 +1,17 @@
 {
   "name": "@inlite/solidjs-typed-classlist",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "type": "module",
-  "module": "./dist/solidjs-typed-classlist.es.js",
+  "module": "./dist/solidjs-typed-classlist.js",
   "main": "./dist/solidjs-typed-classlist.umd.js",
   "files": [
     "dist",
     "src"
   ],
+  "repository": { "type":"git", "url":"https://github.com/grobitto/solidjs-typed-classlist"},
   "exports": {
     ".": {
-      "import": "./dist/solidjs-typed-classlist.es.js",
+      "import": "./dist/solidjs-typed-classlist.js",
       "require": "./dist/solidjs-typed-classlist.umd.js"
     }
   },
